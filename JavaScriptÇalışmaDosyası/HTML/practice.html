@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*
+
+      .right {
+        position: absolute;
+        padding: 10px;
+        margin-right: 15px;
+        width: 300px;
+        border: 5px solid blue;
+        right: 0px;
+      }
+      .fright {
+        float: right;
+        padding: 10px;
+        margin-right: 15px;
+        width: 300px;
+        border: 5px solid blue;
+      } */
+      .right {
+        margin: 15px auto;
+        padding: 15px;
+        width: 300px;
+        border: 5px solid blue;
+        background-color: white;
+      }
+      .fright {
+        margin: 15px auto;
+        padding: 15px;
+        width: 300px;
+        border: 5px solid blue;
+        background-color: white;
+      }
+      .container {
+        border: 5px solid red;
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        background-color: lightgray;
+      }
+      .castle {
+        display: block;
+        margin: 0px auto 20px auto;
+        width: 40%;
+      }
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        border: 3px solid green;
+        margin: 20px auto;
+        width: 50%;
+      }
+      .links {
+        padding: 10px;
+        border: 3px solid yellow;
+        width: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px auto;
+      }
+      a {
+        padding: 10px;
+      }
+      /*
+      a:link {
+        color: #000;
+      }
+      a:visited {
+        color: #0000;
+      }
+      a:hover {
+        color: #ff00ff;
+        font-size: 22px;
+      }
+      a:active {
+        color: #0000ff;
+      } */
+      div.right:hover {
+        background-color: violet;
+      }
+      div.fright:hover {
+        background-color: orangered;
+      }
+      p.paragright::first-line {
+        color: #ff0000;
+        font-variant: small-caps;
+      }
+      p::first-letter {
+        color: gold;
+        font-size: xx-large;
+      }
+      h1::before {
+        content: "FuckYou ";
+        color: saddlebrown;
+      }
+      h1::after {
+        content: " My name is Orien";
+        color: indigo;
+      }
+      ul.blocknav {
+        list-style-type: none;
+        margin: 10px;
+        padding: 0;
+        width: 300px;
+        background-color: lightgray;
+        float: right;
+        border: 3px solid black;
+      }
+      ul.blocknav li a {
+        display: block;
+        padding: 8px 16px;
+        text-decoration: none;
+        text-align: center;
+      }
+      .active,
+      .list {
+        border-bottom: 3px solid black;
+      }
+
+      /*
+       This code does the exact thing what the above code does.
+      .list:hover {
+        background-color: grey;
+      }
+      */
+      ul.blocknav li a.active {
+        background-color: #04aa6d;
+        color: white;
+      }
+
+      ul.blocknav li a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+      }
+      ul.inlinenav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        width: 600px;
+        /*position: fixed;
+        top: 0;
+        width: 100%;*/
+      }
+      ul.inlinenav li {
+        float: left;
+        border-right: 1px solid #bbb;
+      }
+      ul.inlinenav li:last-child {
+        border-right: 0px;
+      }
+      ul.inlinenav li a,
+      .dropbtn {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      ul.inlinenav li a:hover,
+      .dropdown:hover .dropbtn {
+        background-color: #111;
+      }
+      ul.inlinenav li a.active {
+        background-color: #04aa6d;
+      }
+      ul.inlinenav li a:hover:not(.active) {
+        background-color: #111;
+      }
+      li.dropdown {
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      .dropdown-content a:hover {
+        background-color: red;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      #rcorners1 {
+        width: 200px;
+        height: 100px;
+        background-color: #555;
+        padding: 20px;
+        border-radius: 15px 50px 30px 5px;
+      }
+      #rcorners2 {
+        width: 200px;
+        height: 150px;
+        background-color: #ff0000;
+        padding: 20px;
+        border-radius: 15px 50px 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="padding-top: 120px">Hello World!</h1>
+    <img
+      class="castle"
+      src="images/969859.jpg"
+      alt="Foking Image"
+      style="width: 150px; height: 325px"
+    />
+    <div class="container">
+      <h1>PANO</h1>
+      <div class="right">
+        <p class="paragright">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          vel libero enim, magni quaerat ducimus doloremque laudantium nulla
+          impedit fugiat minus quos consequatur officiis architecto eos eaque
+          illum in? Cumque?
+        </p>
+      </div>
+      <div class="fright">
+        <p class="fparagright">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+          repudiandae soluta distinctio vitae, quam accusamus placeat iste
+          suscipit, nesciunt nemo rem fuga, deserunt quaerat illum. Et deleniti
+          omnis quae repudiandae!
+        </p>
+      </div>
+    </div>
+    <div class="center">
+      <p>I am vertically and horizontally centered.</p>
+    </div>
+    <div class="links">
+      <a href="#" title="Hyper Text Markup Language">HTML</a>
+
+      <a href="#" title="Cascading Style Sheets">CSS</a>
+
+      <a href="#" title="JavaScript">JavaScript</a>
+    </div>
+    <ul class="blocknav">
+      <li><a href="#home" class="active">HOME</a></li>
+      <li><a href="#career" class="list">CAREER</a></li>
+      <li><a href="#contact" class="list">CONTACT</a></li>
+      <li><a href="#about" class="noborder">ABOUT</a></li>
+    </ul>
+    <ul class="inlinenav">
+      <li><a href="football" class="active">Football</a></li>
+      <li><a href="basketball">Basketball</a></li>
+      <li><a href="horseriding">Horse Riding</a></li>
+      <li><a href="ski">Ski</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </li>
+    </ul>
+
+    <h2>The border-radius Property</h2>
+
+    <p>Four values - border-radius: 15px 50px 30px 5px:</p>
+    <p id="rcorners1"></p>
+    <p>Three values - border-radius: 15px 50px 30px:</p>
+    <p id="rcorners2"></p>
+  </body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cenk</title>
+    <style>
+      .city {
+        background-color: tomato;
+        color: white;
+        border: 2px solid black;
+        margin: 20px;
+        padding: 20px;
+      }
+      #myHeader {
+        background-color: royalblue;
+        color: black;
+        padding: 40px;
+        text-align: center;
+      }
+      aside {
+        width: 30%;
+        padding-left: 15px;
+        padding-top: 15px;
+        margin-left: 15px;
+        margin-bottom: 15px;
+        float: right;
+        font-style: italic;
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HTML Classes
+    The class attribute is often used to point to a class name in a style sheet. 
+    It can also be used by a JavaScript to access and manipulate elements with the specific class name.
+    In the following example we have three <div> elements with a class attribute with the value of "city". 
+    All of the three <div> elements will be styled equally according to the .city style definition in the head section-->
+    <div class="city">
+      <h2>London</h2>
+      <p>London is the capital of UK</p>
+    </div>
+    <div class="city">
+      <h2>Paris</h2>
+      <p>Paris is the capital of France</p>
+    </div>
+    <div class="city">
+      <h2>Tokyo</h2>
+      <p>Tokyo is the capital of Japan</p>
+    </div>
+    <h2>Use of The class Attribute in JavaScript</h2>
+    <p>Click the button to hide all ements with class name "city" :</p>
+    <button onclick="myFunction()">Hide Elements</button>
+    <button onclick="myOtherFunction()">Reveal Elements</button>
+    <script>
+      function myFunction() {
+        let x = document.getElementsByClassName("city");
+        for (let i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+      }
+      function myOtherFunction() {
+        let x = document.getElementsByClassName("city");
+        for (let i = 0; i < x.length; i++) {
+          x[i].style.display = "inline-block";
+        }
+      }
+    </script>
+
+    <!-- HTML id Attribute
+    The id attribute specifies a unique id for an HTML element. 
+    The value of the id attribute must be unique within the HTML document.
+    The id attribute is used to point to a specific style declaration in a style sheet. 
+    It is also used by JavaScript to access and manipulate the element with the specific id.
+    The syntax for id is: write a hash character (#), followed by an id name. 
+    Then, define the CSS properties within curly braces {}.
+    In the following example we have an <h3> element that points to the id name "myHeader". 
+    This <h3> element will be styled according to the #myHeader style definition in the head section
+    Note: The id name must contain at least one character, cannot start with a number, and must not contain whitespaces (spaces, tabs, etc.).-->
+
+    <h3 id="myHeader">My Header</h3>
+    <!-- HTML JavaScript (Small Intro)
+    The HTML <script> tag is used to define a client-side script (JavaScript).
+    The <script> element either contains script statements, or it points to an external script file through the src attribute.
+    Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
+    To select an HTML element, JavaScript most often uses the document.getElementById() method.-->
+    <br />
+    <button
+      type="button"
+      onclick="document.getElementById('demo').innerHTML = Date()"
+    >
+      Click me to display Date and Time.
+    </button>
+    <p id="demo"></p>
+    <p>
+      This example writes "Hello JavaScript!" into an HTML element with
+      id="demo":
+    </p>
+    <h3>Use JavaScript to Change Text</h3>
+    <p id="trial"></p>
+    <script>
+      document.getElementById("trial").innerHTML = "Hello JavaScript";
+    </script>
+    <h3 style="color: coral; font-size: 30px">My First JavaScript</h3>
+    <button type="button" onclick="myFunction()">Click me!</button>
+    <p id="change">This is a demonstration</p>
+    <script>
+      function myFunction() {
+        document.getElementById("change").innerHTML = "Hello JavaScript";
+        document.getElementById("change").style.fontSize = "20px";
+        document.getElementById("change").style.color = "dark";
+        document.getElementById("change").style.backgroundColor = "green";
+        document.getElementById("change").style.fontFamily = "helvetica";
+      }
+    </script>
+    <p style="color: darkslategrey">
+      Here, a JavaScript changes the value of the src (source) attribute of an
+      image.
+    </p>
+    <img
+      id="myImg"
+      src="bulboff.png"
+      alt="Bulb"
+      style="width: 100px; height: 180px"
+    />
+    <button type="button" onclick="Light(1)">Bulb is On</button>
+    <button type="button" onclick="Light(0)">Bulb is Off</button>
+    <script>
+      function Light(sw) {
+        let pic;
+        if (sw == 1) {
+          pic = "bulbon.png";
+        } else {
+          pic = "bulboff.png";
+        }
+        document.getElementById("myImg").src = pic;
+      }
+    </script>
+    <!-- HTML SEMANTICS-->
+    <!-- HTML <section> element
+    <section> element is used in Chapters,Intros,News Items,Contact Information
+      -->
+    <h2 style="color: crimson">The &ltsection&gt; Element</h2>
+    <section>
+      <h3>WWF</h3>
+      <p>
+        The World Wide Fund for Nature (WWF) is an international organization
+        working on issues regarding the conservation, research and restoration
+        of the environment, formerly named the World Wildlife Fund. WWF was
+        founded in 1961.
+      </p>
+    </section>
+    <section>
+      <h3>WWF's Panda symbol</h3>
+      <p>
+        The Panda has become the symbol of WWF. The well-known panda logo of WWF
+        originated from a panda named Chi Chi that was transferred from the
+        Beijing Zoo to the London Zoo in the same year of the establishment of
+        WWF.
+      </p>
+    </section>
+    <!-- HTML Article element
+    The <article> element specifies independent, self-contained content.
+    An article should make sense on its own, and it should be possible to distribute
+    it independently from the rest of the web site.
+    Examples of where the <article> element can be used: Forum posts, Blog posts, User comments, 
+    Product cards, Newspaper articles -->
+    <h2 style="color: crimson">The &ltarticle&gt Element</h2>
+    <article>
+      <h4>Google Chrome</h4>
+      <p>
+        Google is a web browser developed by Google, released in 2008. Chrome is
+        the world's most popular web browser today!
+      </p>
+    </article>
+    <article>
+      <h4>Mozilla Firefox</h4>
+      <p>
+        Mozilla Firefox is an open-source web browser developed by Mozilla.
+        Firefox has been the second most popular web browser since January 2018.
+      </p>
+    </article>
+    <article>
+      <h4>Microsoft Edge</h4>
+      <p>
+        Microsoft Edge is a web browser developed by Microsoft, released in
+        2015. Microsoft Edge replaced Internet Explorer.
+      </p>
+    </article>
+    <!-- HTML <header> element
+    The <header> element represents a container for introductory content or a set of navigational links.
+    A <header> element typically contains: one or more heading elements (<h1> - <h6>),
+    logo or icon, authorship information.
+    *You can have several <header> elements in one HTML document. However, <header> cannot be placed within a <footer>, 
+    <address> or another <header> element. -->
+    <h2 style="color: crimson">The &ltheader&gt &copy; Element</h2>
+    <article>
+      <header>
+        <h3>What Does WWF Do?</h3>
+        <p>WWF's mission:</p>
+      </header>
+      <p>
+        WWF's mission is to stop the degradation of our planet's natural
+        environment, and build a future in which humans live in harmony with
+        nature.
+      </p>
+    </article>
+    <!-- HTML <footer> element 
+    The <footer> element defines a footer for a document or section.
+    A <footer> element typically contains: authorship info, copyright info, contact info, sitemap,
+    back to top links, related documents.  
+    *You can have several <footer> elements in one document.-->
+    <h2 style="color: crimson">The &ltfooter&gt Element</h2>
+    <footer>
+      <p>Author: Helavela Velvela</p>
+      <p><a href="mailto:vege@example.com">vege@example.com</a></p>
+    </footer>
+    <!-- HTML <nav> element 
+    The <nav> element defines a set of navigation links.
+    Notice that NOT all links of a document should be inside a <nav> element. 
+    The <nav> element is intended only for major block of navigation links.
+    Browsers, such as screen readers for disabled users, can use this element to determine whether to omit the initial rendering of this content. -->
+    <h2 style="color: crimson">The &ltnav&gt Element</h2>
+    <nav>
+      <a href="/html/">HTML</a> | <a href="/css/">CSS</a> |
+      <a href="/js/">JavaScript</a> | <a href="/jquery/">jQuery</a>
+    </nav>
+    <!-- HTML <aside> element 
+    The <aside> element defines some content aside from the content it is placed in (like a sidebar). 
+    The <aside> content should be indirectly related to the surrounding content. -->
+    <h2 style="color: crimson">The &ltaside&gt Element</h2>
+    <p>
+      My family and I visited The Epcot center this summer. The weather was
+      nice, and Epcot was amazing! I had a great summer together with my family!
+    </p>
+
+    <aside>
+      <p>
+        The Epcot center is a theme park at Walt Disney World Resort featuring
+        exciting attractions, international pavilions, award-winning fireworks
+        and seasonal special events.
+      </p>
+    </aside>
+
+    <p>
+      My family and I visited The Epcot center this summer. The weather was
+      nice, and Epcot was amazing! I had a great summer together with my family!
+    </p>
+    <p>
+      My family and I visited The Epcot center this summer. The weather was
+      nice, and Epcot was amazing! I had a great summer together with my family!
+    </p>
+    <!-- HTML <figure> & <figcaption> elements
+    The <figure> tag specifies self-contained content, like illustrations,
+    diagrams, photos, code listings, etc.
+    The <figcaption> tag defines a caption for a <figure> element. The <figcaption> element can be placed as the first or 
+    as the last child of a <figure> element.
+    The <img> element defines the actual image/illustration. -->
+    <h2 style="color: crimson">
+      The &ltfigure&gt and &ltfigcaption&gt Elements
+    </h2>
+    <figure>
+      <img
+        src="images/969859.jpg"
+        alt="The Castle"
+        style="width: 150px; height: 250px"
+      />
+      <figcaption>Fig.1 - The Castle of Dracula Tepesh</figcaption>
+    </figure>
+ 
+    <!-- HTML Forms An HTML form is used to collect user input. The user input is 
+      most often sent to a server for processing.The <form> element is a container for different types of input elements, such as: 
+      text fields, checkboxes, radio buttons, submit buttons, etc.-->
+      <h2 style="color: brown;">HTML Forms</h2>
+      <form action="/action_page.php">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+      <!-- HTML <select element The <select> element defines a drop-down list
+        The <option> elements defines an option that can be selected.
+        By default, the first item in the drop-down list is selected.
+        To define a pre-selected option, add the selected attribute to the option:-->
+        <br><label for="cars">Choose a Car</label>
+        <select name="cars" id="cars" size="2" multiple>
+          <option value="mercedes">Mercedes</option>
+          <option value="volvo">Volvo</option>
+          <option value="audi">Audi</option>
+          <option value="fiat">Fiat</option>
+          <option value="none" selected>None</option>
+        </select>
+        <h2 style="color: brown;">Textarea</h2>
+      <!-- HTML Textarea-->
+        <p>The textarea element defines a multi-line input field.</p>
+        <form action="/action_page.php">
+        <textarea name="message" rows="5" cols="30" >The cat was playing in the garden.</textarea>
+        <br><br>
+        <input type="submit">
+        </form>
+        <h2 style="color: darkred;">Button Element</h2>
+        <button type="button" onclick="alert('Hello World!')">Click Me</button> 
+        <h2 style="color: brown;">Grouping Form Data with Fieldset</h2>
+
+        <p>The fieldset element is used to group related data in a form, and the legend element defines a caption for the fieldset element.</p>
+        
+        <form action="/action_page.php">
+          <fieldset>
+            <legend>Personalia:</legend>
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="John"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <input type="submit" value="Submit">
+          </fieldset>
+        </form>
+        <h2 style="color: brown;">The datalist Element</h2>
+        <!-- HTML <datalist> element
+          The <datalist> element specifies a list of pre-defined options for an <input> element.
+          Users will see a drop-down list of the pre-defined options as they input data.
+          The list attribute of the <input> element, must refer to the id attribute of the <datalist> element.
+          -->
+          <form action="/someaction.php">
+          <input list="browsers">
+          <datalist id="browsers"> <option value="Internet Explorer">
+            <option value="Firefox"></option>
+            <option value="Chrome"></option>
+            <option value="Safari"></option>
+            <option value="Opera"></option>
+          </option></datalist>
+          <input type="submit">
+          </form>
+          <p style="font-size: 125%; color: chocolate;">Input Type Password</p>
+          <form>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="pwd">Password:</label><br>
+            <input type="password" id="pwd" name="pwd"><br><br>
+            <input type="submit" value="Log-in">
+          </form>
+          <form>
+            
+            <br><p style="font-family: Arial, Helvetica, sans-serif;">Chose your favorite web dev language :</p>
+            <input type="radio" id="html" name="fav_language">
+            <label for="html" style="color:blue">HTML</label><br>
+            <input type="radio" id="css" name="fav_language">
+            <label for="css" style="color:red">CSS</label><br>
+            <input type="radio" id="js" name="fav_language">
+            <label for="js" style="color:green">JavaScript</label><br>
+            
+          </form>
+          <h2>Date Field</h2>
+
+<p>The <strong>input type="date"</strong> is used for input fields that should contain a date.</p>
+<form>
+  <label for="birthday">Birthday</label>
+  <input type="date">
+  <input type="submit" value="confirm">
+</form>
+
+<h2>Number Field</h2>
+
+<p>The <strong>input type="number"</strong> defines a numeric input field.</p>
+
+<p>You can use the min and max attributes to add numeric restrictions in the input field:</p>
+
+<form action="/action_page.php">
+  <label for="quantity">Quantity (between 1 and 5):</label>
+  <input type="number" id="quantity" name="quantity" min="1" max="5">
+  <input type="submit" value="Submit">
+</form>
+ 
+  </body>
+</html>

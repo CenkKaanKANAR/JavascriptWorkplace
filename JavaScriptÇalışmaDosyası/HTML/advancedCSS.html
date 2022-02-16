@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* <!-- CSS Transition--> */
+      div {
+        width: 100px;
+        height: 100px;
+        background: red;
+        transition: width 2s, height 4s;
+      }
+
+      div:hover {
+        width: 300px;
+        height: 300px;
+      }
+      #div1 {
+        transition-timing-function: linear;
+      }
+      #div2 {
+        transition-timing-function: ease;
+      }
+      #div3 {
+        transition-timing-function: ease-in;
+      }
+      #div4 {
+        transition-timing-function: ease-out;
+      }
+      #div5 {
+        transition-timing-function: ease-in-out;
+      }
+      #div6 {
+        width: 100px;
+        height: 100px;
+        background: blue;
+        transition: width 2s, height 2s, transform 2s, background 2s;
+      }
+      #div6:hover {
+        width: 300px;
+        height: 300px;
+        background: red;
+        transform: rotate(180deg);
+      }
+      /* <!-- CSS Animation--> */
+      /*
+      #divAnim {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        animation-name: example;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }*/
+      #divAnim {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        animation: example 5s linear 2s infinite alternate;
+      }
+
+      /*
+      @keyframes example{
+        from {
+          background-color: red;
+        }
+        to {
+          background-color: yellow;
+        }
+      } */
+      @keyframes example {
+        0% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+        25% {
+          background-color: yellow;
+          left: 200px;
+          top: 0px;
+        }
+        50% {
+          background-color: blue;
+          left: 200px;
+          top: 200px;
+        }
+        75% {
+          background-color: green;
+          left: 0px;
+          top: 200px;
+        }
+        100% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+      }
+      .button {
+        background-color: #4caf50; /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+
+      .button1 {
+        background-color: white;
+        color: black;
+        border: 2px solid #4caf50;
+      }
+
+      .button1:hover {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .button2 {
+        background-color: white;
+        color: black;
+        border: 2px solid #008cba;
+      }
+
+      .button2:hover {
+        background-color: #008cba;
+        color: white;
+      }
+
+      .button3 {
+        background-color: white;
+        color: black;
+        border: 2px solid #f44336;
+      }
+
+      .button3:hover {
+        background-color: #f44336;
+        color: white;
+      }
+
+      .button4 {
+        background-color: white;
+        color: black;
+        border: 2px solid #e7e7e7;
+      }
+
+      .button4:hover {
+        background-color: #e7e7e7;
+      }
+
+      .button5 {
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+      }
+
+      .button5:hover {
+        background-color: #555555;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- CSS Transition-->
+    <h1>The transition Property</h1>
+
+    <p>Hover over the div element below, to see the transition effect:</p>
+    <div></div>
+    <br />
+    <h2>Transition + Transform</h2>
+
+    <p>Hover over the div element below:</p>
+    <div id="div6"></div>
+    <br />
+    <div id="div1">linear</div>
+    <br />
+    <div id="div2">ease</div>
+    <br />
+    <div id="div3">ease-in</div>
+    <br />
+    <div id="div4">ease-out</div>
+    <br />
+    <div id="div5">ease-in-out</div>
+    <br />
+    <!-- CSS Animation-->
+    <h1>CSS Animation</h1>
+
+    <div id="divAnim"></div>
+
+    <p>
+      <b>Note:</b> When an animation is finished, it goes back to its original
+      style.
+    </p>
+    <h2>Hoverable Buttons</h2>
+
+    <p>
+      Use the :hover selector to change the style of the button when you move
+      the mouse over it.
+    </p>
+    <p>
+      <strong>Tip:</strong> Use the transition-duration property to determine
+      the speed of the "hover" effect:
+    </p>
+
+    <button class="button button1">Green</button>
+    <button class="button button2">Blue</button>
+    <button class="button button3">Red</button>
+    <button class="button button4">Gray</button>
+    <button class="button button5">Black</button>
+  </body>
+</html>

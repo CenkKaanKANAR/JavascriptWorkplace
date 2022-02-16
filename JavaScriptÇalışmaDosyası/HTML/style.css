@@ -1,0 +1,24 @@
+body {
+  background-color: mintcream;
+  text-align: center;
+}
+h1 {
+  color: brown;
+  font-size: 40px;
+}
+h2 {
+  color: navy;
+  font-size: 35px;
+}
+h3 {
+  color: olive;
+  font-size: 30px;
+}
+h4 {
+  color: crimson;
+  font-size: 25px;
+}
+p {
+  font-family: sans-serif;
+  font-size: 20px;
+}
